@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>All Table</h2>
+    {% for t in table %}
+    <h2>{{ t.table_name }}</h2>
+    {% endfor %}
+{% endblock %}
+
+

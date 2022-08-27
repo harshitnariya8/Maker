@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="POST" action="">
+    {% csrf_token %}
+    {% if user.is_authenticated %}
+    <input name="restaurant_id" value="{{ user.id }}" style="display: none">
+    {% endif %}
+    <label>Category Name:</label>
+    <input type="text" name="category_name" placeholder="Category Name"><br><br>
+    <label>Status</label>
+    <input type="radio" name="status" value="True"><input type="radio" name="status" value="False"><br><br>
+    <button type="submit">Add</button>
+
+</form>
+    {% for m in messages %}
+        <h3>{{ m }}</h3>
+    {% endfor %}
+{% endblock %}

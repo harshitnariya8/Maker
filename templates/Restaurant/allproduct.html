@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>All Product</h2>
+    {% for p in product %}
+    <h2>{{ p.product_name }}</h2>
+        <h2>{{ p.product_price }}</h2>
+        <h2>{{ p.status }}</h2>
+        <img src="{{ p.image.url }}">
+    {% endfor %}
+
+{% endblock %}
+
+
